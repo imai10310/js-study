@@ -15,7 +15,7 @@
 // ・Math Rondom使用
 
 let num = 0;
-for (let i = 0; i <= 100; math.round()) {}
+for (let i = Math.random * 1000; i <= 100; i++) {}
 
 // let num = 4;
 // console.log('ループ開始');
