@@ -18,13 +18,31 @@
 // まず1000回ループするforをつくる
 // その次に乱数を作るって考えてください
 
-let saveNum = null;
+let saveNum = Math.floor(Math.random() * (100 - 1)) + 100;
+let isMatch = false; //マッチしたかどうか 一回も〜だったらのときは必ず必要 ex)１回でもログイン済みだったら〜。。。
+let resultText = 'ざまあ';
+
 for (let i = 0; i < 1000; i++) {
   const randomNum = Math.floor(Math.random() * (100 - 1)) + 100;
+
   if (saveNum === randomNum) {
-    console.log(`同じ数がでた${saveNum}と${randomNum}`);
-  } else {
-    console.log('ざまあ');
+    // console.log(`同じ数がでた${saveNum}と${randomNum}`);
+    resultText = `同じ数がでた${saveNum}と${randomNum}`;
+    isMatch = true;
+    break;
   }
   saveNum = randomNum;
 }
+
+// if (isMatch === false) {
+//   // console.log('ざまあ');
+//   resultText = 'ざまあ';
+// }
+console.log(resultText);
+
+// 一致したらその場で処理終了
+//一回も一致しなかったら「ざまあ」
+//一回も一致しなかったら
+//=for文の中で一致しなかったら
+
+// if
