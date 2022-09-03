@@ -19,7 +19,7 @@
 // その次に乱数を作るって考えてください
 
 let saveNum = Math.floor(Math.random() * (100 - 1)) + 100;
-let isMatch = false; //マッチしたかどうか 一回も〜だったらのときは必ず必要 ex)１回でもログイン済みだったら〜。。。
+let isMatch = false; //マッチしたかどうか 一回も〜だったらのときは必ず必要 ex)１回でもログイン済みだったら〜。。。 //これもいらなくなる
 let resultText = 'ざまあ';
 
 for (let i = 0; i < 1000; i++) {
@@ -28,7 +28,7 @@ for (let i = 0; i < 1000; i++) {
   if (saveNum === randomNum) {
     // console.log(`同じ数がでた${saveNum}と${randomNum}`);
     resultText = `同じ数がでた${saveNum}と${randomNum}`;
-    isMatch = true;
+    isMatch = true; //これいらなくなる
     break;
   }
   saveNum = randomNum;
