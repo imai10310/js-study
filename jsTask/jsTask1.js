@@ -14,22 +14,17 @@
 // ・変数使用
 // ・Math Rondom使用
 
-// let num = 0;
-// for (let i = Math.random() * 1000; i < 100; i++) {
-//   console.log(i);
-// }
-
 //ヒント
 // まず1000回ループするforをつくる
 // その次に乱数を作るって考えてください
 
-let saveNum = i; //前の答えを格納する
-let rondomNum = Math.random() * 100; //1-100の乱数を指示
+let saveNum = null;
 for (let i = 0; i < 1000; i++) {
-  let compareNum = rondomNum;
-  if (i === rondomNom) {
-    console.log('同じ数が出た' + i + 'と' + compareNum);
+  const randomNum = Math.floor(Math.random() * (100 - 1)) + 100;
+  if (saveNum === randomNum) {
+    console.log(`同じ数がでた${saveNum}と${randomNum}`);
   } else {
     console.log('ざまあ');
   }
+  saveNum = randomNum;
 }
