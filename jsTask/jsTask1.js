@@ -20,23 +20,23 @@
 
 //========================================================================
 // ●●●isMatchで判断●●●
-let saveNum = Math.floor(Math.random() * (100 - 1)) + 100;
-let isMatch = false; //マッチしたかどうか 一回も〜だったらのときは必ず必要 ex)１回でもログイン済みだったら〜。。。
+// let saveNum = Math.floor(Math.random() * (100 - 1)) + 100;
+// let isMatch = false; //マッチしたかどうか 一回も〜だったらのときは必ず必要 ex)１回でもログイン済みだったら〜。。。
 
-for (let i = 0; i < 1000; i++) {
-  const randomNum = Math.floor(Math.random() * (100 - 1)) + 100;
+// for (let i = 0; i < 1000; i++) {
+//   const randomNum = Math.floor(Math.random() * (100 - 1)) + 100;
 
-  if (saveNum === randomNum) {
-    console.log(`同じ数がでた${saveNum}と${randomNum}`);
-    isMatch = true;
-    break;
-  }
-  saveNum = randomNum;
-}
+//   if (saveNum === randomNum) {
+//     console.log(`同じ数がでた${saveNum}と${randomNum}`);
+//     isMatch = true;
+//     break;
+//   }
+//   saveNum = randomNum;
+// }
 
-if (isMatch === false) {
-  console.log('ざまあ');
-}
+// if (isMatch === false) {
+//   console.log('ざまあ');
+// }
 
 //===========================================================================
 

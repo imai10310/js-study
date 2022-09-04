@@ -4,18 +4,18 @@
 //奇数の時は「奇数」 と表示する
 
 //●●自分の答え●●
-let resultText = '';
-for (let i = 0; i < 100; i++) {
-  const randomNum = i; //
-  if (randomNum % 2 === 0) {
-    resultText = `偶数です${i}`;
-    // break;
-  }
-  if (randomNum % 2 !== 0) {
-    resultText = `奇数です${i}`;
-  }
-}
-console.log(resultText);
+// let resultText = '';
+// for (let i = 0; i < 100; i++) {
+//   const randomNum = i; //
+//   if (randomNum % 2 === 0) {
+//     resultText = `偶数です${i}`;
+//     // break;
+//   }
+//   if (randomNum % 2 !== 0) {
+//     resultText = `奇数です${i}`;
+//   }
+// }
+// console.log(resultText);
 
 //●●正しい解答
 // for (let i = 0; i < 100; i++) {
@@ -84,3 +84,36 @@ console.log(resultText);
 //   }
 // }
 //--------------------------------------------------------
+//for文10回回す
+//1,2,4が出た場合　「これは指定された数字です」
+//7だったら「７です」
+//それ以外「うんち」
+//備考（if,switchどちらも作る。）
+
+//●●for文●●
+for (let i = 0; i < 10; i++) {
+  if (i === 1 || i === 2 || i === 4) {
+    console.log('これは指定された数字です。');
+  } else if (i === 7) {
+    console.log('７です');
+  } else {
+    console.log('うんち');
+  }
+}
+
+//●●switch●●
+// for (let i = 0; i < 10; i++) {
+//   switch (i) {
+//     case 1:
+//     case 2:
+//     case 4:
+//       console.log('これは指定された数字です。');
+//       break;
+//     case 7:
+//       console.log('7です');
+//       break;
+//     default:
+//       console.log('うんち');
+//       break;
+//   }
+// }
