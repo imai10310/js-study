@@ -40,7 +40,7 @@
 
 //===========================================================================
 
-//●●resultTextの変数を宣言し、true,falseの場合結果を代入する●●●
+// ●●resultTextの変数を宣言し、true,falseの場合結果を代入する●●●
 // let saveNum = Math.floor(Math.random() * (100 - 1)) + 100;
 // let resultText = 'ざまあ';
 
