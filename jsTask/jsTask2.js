@@ -52,12 +52,12 @@
 
 // 星を格納する場所
 let str = '★';
-const column = 6; //縦
-const row = 4; //横
+const row = 6; //縦
+const column = 4; //横
 // 縦のループ処理を行う;
-for (let i = 0; i <= column; i++) {
+for (let i = 0; i <= row; i++) {
   // 横のループ処理を行う;
-  for (let j = 0; j <= row; j++) {
+  for (let j = 0; j <= column; j++) {
     str += '★';
   }
   console.log(str);
