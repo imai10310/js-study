@@ -8,9 +8,9 @@
 
 //-----------------------------------------------------
 // 数を指定する
-let selectNum = 60;
-// 1-100までの数を用意
-for (let i = selectNum; i <= 100; i++) {
-  selectNum += i;
-}
-console.log(selectNum);
+// let selectNum = 60;
+// // 1-100までの数を用意
+// for (let i = selectNum; i <= 100; i++) {
+//   selectNum += i;
+// }
+// console.log(selectNum);

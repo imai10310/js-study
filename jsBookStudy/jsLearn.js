@@ -1,11 +1,126 @@
-'use strict';
-// ●ループの入れ子
-console.log('外のループ開始');
-for (let i = 0; i < 9; i++) {
-  console.log('内のループ開始');
-  for (let j = 0; j < 8; j++) {
-    console.log(`i:j=${i}:${j}`);
-  }
-  console.log('内のループ終了');
+// 'use strict';
+// // ●ループの入れ子
+// console.log('外のループ開始');
+// for (let i = 0; i < 9; i++) {
+//   console.log('内のループ開始');
+//   for (let j = 0; j < 8; j++) {
+//     console.log(`i:j=${i}:${j}`);
+//   }
+//   console.log('内のループ終了');
+// }
+// console.log('外のループ終了');
+
+//-------------------------------------------------
+
+// let nameList = ['今井', '深田', '秋葉', '山田'];
+// nameList[9] = '広川';
+// console.log(nameList[4]);  //undefinedとなる
+
+//lengthを使って配列をループさせる
+// let nameList = ['今井', '深田', '秋葉', '山田'];
+// nameList[6] = 'ベンジャミン';
+// for (let i = 0; i < nameList.length; i++) {
+//   console.log(`${i + 1}人目は${nameList[i]}`);
+// }
+
+//for ofを使って配列をループさせる
+//nameListの要素を単純にループさせるだけであればめちゃ便利だが、
+//インクリメントの変数（i)が存在せず、指定した要素を個別で取り出せない。その場合は通常のforを使う！
+// let nameList = ['今井', '深田', '秋葉', '山田'];
+// for (let picName of nameList) {
+//   console.log(picName);
+// }
+
+//☆と★を交互に１１個表示させる（forと条件分岐を使用して）
+// let str = '';
+// for (let i = 1; i <= 11; i++) {
+//   if (i % 2 === 0) {
+//     str = '★';
+//   } else {
+//     str = '☆';
+//   }
+//   console.log(str);
+// }
+
+// let str = '';
+// for (let i = 0; i < 11; i++) {
+//   if (i % 2 === 0) {
+//     str += '☆\n'; //あるものにたされていく
+//   } else {
+//     str += '★\n';
+//   }
+// }
+// console.log(str);
+
+//----------------------------
+// let str = '';
+// str = '' + '☆\n'; //1回目
+// str = '☆\n' + '★\n'; //2回目
+// str = '☆\n★\n' + '☆\n'; //2回目
+// console.log(str);
+//------------------------------------------------------
+// //7-9
+// //1-100の乱数が30個格納された配列を用意し、
+// //その３０個の数値の最大値、合計値、平均値を計算するプログラムを作る
+
+// //乱数30個の配列を用意する
+// let nums = [];
+// for (let i = 0; i < 30; i++) {
+//   //1-100までの乱数を発生させる。
+//   nums[i] = Math.floor(Math.random() * 100);
+//   console.log(i + 1 + '番目の値=' + nums[i]);
+// }
+
+// let sum = 0;
+// let max = 0;
+// //最大値を抽出
+// for (let num of nums) {
+//   sum += num;
+//   //変数maxと配列内の要素の値numを比較して、numが大きければmaxの値をnumで上書きする
+//   if (num > max) {
+//     max = num;
+//   }
+// }
+// let ave = sum / nums.length;
+// console.log(`合計値=${sum}`);
+// console.log(`平均値=${ave}`);
+// console.log(`最大値=${max}`);
+
+//--------------------------------------------------------
+
+// ●●7-12 breakとcontinueの組み合わせ●●
+
+//1-10の乱数が5個格納された配列を2個用意する
+//それぞれを分子用、分母用の配列とする
+let childNums = [];
+let motherNums = [];
+for (let i = 0; i <= 4; i++) {
+  childNums.push(Math.floor(Math.random() * 10));
+  motherNums.push(Math.floor(Math.random() * 10));
 }
-console.log('外のループ終了');
+
+//それらをループさせながら文数値（割り算の結果）を計算するプログラムを考える
+//分母が０は計算不可能であるため、０が出た場合は即刻処理中止にする
+//
+for (let motherNum of motherNums) {
+  //分母の値を表示
+  console.log(`分母の値：${motherNum}`);
+  //現在の分母が０かどうか
+  //5つ配列があるうち、一つでも0がある場合、中止になる。　もし、0のみスキップし他の分母は表示させるのであればbreakをcontinueにする
+  if (motherNum === 0) {
+    console.log(`分母が０なので、処理を中止します！`);
+    break;
+  }
+  //分母が０以外だった場合、分子のループスタート
+  for (let childNum of childNums) {
+    //分子の値を表示
+    console.log(`分子の値：${childNum}`);
+    //現在の分子が0かどうか
+    if (childNum === 0) {
+      console.log('分子が０なので、処理を飛ばします！');
+      continue;
+    }
+    let ans = childNum / motherNum;
+    console.log(`分散値:${ans}`);
+  }
+}
