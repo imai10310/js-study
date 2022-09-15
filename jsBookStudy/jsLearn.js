@@ -150,15 +150,39 @@
 // console.log(`list2の合計${sum2}`);
 // console.log(`list3の合計${sum3}`);
 
-//==========上のコードを関数を使って簡潔に===================
+// ==========上のコードを関数を使って簡潔に===================
 
-function sumArray(list) {
+// // sumArray:関数名　list:引数
+// function sumArray(list) {
+//   //合計値用の変数を用意　sum:合計値を格納する変数
+//   let sum = 0;
+//   // ループさせながら合計値を計算
+//   for (let num of list) {
+//     sum += num;
+//   }
+//   // 計算された合計値を表示
+//   console.log(`合計値${sum}`);
+// }
+
+// let list1 = [1, 2, 3, 4, 5, 6, 7];
+// let list2 = [8, 9, 10, 11];
+// let list3 = [12, 13, 14, 15];
+
+// // 関数を呼び出している
+// // list1にいく→一旦処理が関数にうつる→list2にいく　というような流れ。
+// sumArray(list1);
+// sumArray(list2);
+// sumArray(list3);
+
+// ==========上のコードをアロー関数で記述する===================
+
+const sumArray = (list) => {
   let sum = 0;
   for (let num of list) {
     sum += num;
   }
-  console.log(`合計値${sum}`);
-}
+  console.log(`合計値は：${sum}`);
+};
 let list1 = [1, 2, 3, 4, 5, 6, 7];
 let list2 = [8, 9, 10, 11];
 let list3 = [12, 13, 14, 15];
