@@ -88,39 +88,81 @@
 
 //--------------------------------------------------------
 
-// ●●7-12 breakとcontinueの組み合わせ●●
+// // ●●7-12 breakとcontinueの組み合わせ●●
 
-//1-10の乱数が5個格納された配列を2個用意する
-//それぞれを分子用、分母用の配列とする
-let childNums = [];
-let motherNums = [];
-for (let i = 0; i <= 4; i++) {
-  childNums.push(Math.floor(Math.random() * 10));
-  motherNums.push(Math.floor(Math.random() * 10));
-}
+// //1-10の乱数が5個格納された配列を2個用意する
+// //それぞれを分子用、分母用の配列とする
+// let childNums = [];
+// let motherNums = [];
+// for (let i = 0; i <= 4; i++) {
+//   childNums.push(Math.floor(Math.random() * 10));
+//   motherNums.push(Math.floor(Math.random() * 10));
+// }
 
-//それらをループさせながら文数値（割り算の結果）を計算するプログラムを考える
-//分母が０は計算不可能であるため、０が出た場合は即刻処理中止にする
-//
-for (let motherNum of motherNums) {
-  //分母の値を表示
-  console.log(`分母の値：${motherNum}`);
-  //現在の分母が０かどうか
-  //5つ配列があるうち、一つでも0がある場合、中止になる。　もし、0のみスキップし他の分母は表示させるのであればbreakをcontinueにする
-  if (motherNum === 0) {
-    console.log(`分母が０なので、処理を中止します！`);
-    break;
+// //それらをループさせながら文数値（割り算の結果）を計算するプログラムを考える
+// //分母が０は計算不可能であるため、０が出た場合は即刻処理中止にする
+// //
+// for (let motherNum of motherNums) {
+//   //分母の値を表示
+//   console.log(`分母の値：${motherNum}`);
+//   //現在の分母が０かどうか
+//   //5つ配列があるうち、一つでも0がある場合、中止になる。　もし、0のみスキップし他の分母は表示させるのであればbreakをcontinueにする
+//   if (motherNum === 0) {
+//     console.log(`分母が０なので、処理を中止します！`);
+//     break;
+//   }
+//   //分母が０以外だった場合、分子のループスタート
+//   for (let childNum of childNums) {
+//     //分子の値を表示
+//     console.log(`分子の値：${childNum}`);
+//     //現在の分子が0かどうか
+//     if (childNum === 0) {
+//       console.log('分子が０なので、処理を飛ばします！');
+//       continue;
+//     }
+//     let ans = childNum / motherNum;
+//     console.log(`分散値:${ans}`);
+//   }
+// }
+//-----------------------------------------------------------------------------------------------------
+//●関数
+
+// let list1 = [1, 2, 3, 4, 5, 6, 7];
+// let list2 = [8, 9, 10, 11];
+// let list3 = [12, 13, 14, 15];
+
+// let sum1 = 0;
+// let sum2 = 0;
+// let sum3 = 0;
+
+// for (let num of list1) {
+//   sum1 += num;
+// }
+
+// for (let num of list2) {
+//   sum2 += num;
+// }
+// for (let num of list3) {
+//   sum3 += num;
+// }
+
+// console.log(`list1の合計${sum1}`);
+// console.log(`list2の合計${sum2}`);
+// console.log(`list3の合計${sum3}`);
+
+//==========上のコードを関数を使って簡潔に===================
+
+function sumArray(list) {
+  let sum = 0;
+  for (let num of list) {
+    sum += num;
   }
-  //分母が０以外だった場合、分子のループスタート
-  for (let childNum of childNums) {
-    //分子の値を表示
-    console.log(`分子の値：${childNum}`);
-    //現在の分子が0かどうか
-    if (childNum === 0) {
-      console.log('分子が０なので、処理を飛ばします！');
-      continue;
-    }
-    let ans = childNum / motherNum;
-    console.log(`分散値:${ans}`);
-  }
+  console.log(`合計値${sum}`);
 }
+let list1 = [1, 2, 3, 4, 5, 6, 7];
+let list2 = [8, 9, 10, 11];
+let list3 = [12, 13, 14, 15];
+
+sumArray(list1);
+sumArray(list2);
+sumArray(list3);
