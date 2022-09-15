@@ -150,7 +150,7 @@
 // console.log(`list2の合計${sum2}`);
 // console.log(`list3の合計${sum3}`);
 
-// ==========上のコードを関数を使って簡潔に===================
+// ==========上のコードを関数を使って簡潔に==================================================================================
 
 // // sumArray:関数名　list:引数
 // function sumArray(list) {
@@ -174,19 +174,92 @@
 // sumArray(list2);
 // sumArray(list3);
 
-// ==========上のコードをアロー関数で記述する===================
+// ==========上のコードをアロー関数で記述する============================================================================
 
-const sumArray = (list) => {
-  let sum = 0;
-  for (let num of list) {
-    sum += num;
-  }
-  console.log(`合計値は：${sum}`);
-};
-let list1 = [1, 2, 3, 4, 5, 6, 7];
-let list2 = [8, 9, 10, 11];
-let list3 = [12, 13, 14, 15];
+// const sumArray = (list) => {
+//   let sum = 0;
+//   for (let num of list) {
+//     sum += num;
+//   }
+//   console.log(`合計値は：${sum}`);
+// };
+// let list1 = [1, 2, 3, 4, 5, 6, 7];
+// let list2 = [8, 9, 10, 11];
+// let list3 = [12, 13, 14, 15];
 
-sumArray(list1);
-sumArray(list2);
-sumArray(list3);
+// sumArray(list1);
+// sumArray(list2);
+// sumArray(list3);
+
+// ========上のコードを戻り値を使って記述する=========================================================================
+// const calcArraySum = (list) => {
+//   let sum = 0;
+//   for (let num of list) {
+//     sum += num;
+//   }
+//   // 戻り値（関数の呼び出し元に返却している）
+//   return sum;
+// };
+
+// let list1 = [1, 2, 3, 4, 5, 6, 7];
+// let list2 = [8, 9, 10, 11];
+// let list3 = [12, 13, 14, 15];
+
+// // 変数の呼び出し元。下記のように変数を用意してそれに代入するのが基本（例外あり）
+// let sum1 = calcArraySum(list1);
+// let sum2 = calcArraySum(list2);
+// let sum3 = calcArraySum(list3);
+
+// console.log(`合計値は：${sum1}`);
+// console.log(`合計値は：${sum2}`);
+// console.log(`合計値は：${sum3}`);
+
+// ========上のコードに平均値の計算を追加する============================================================================
+
+// const calcArraySum = (list) => {
+//   let sum = 0;
+//   for (let num of list) {
+//     sum += num;
+//   }
+//   return sum;
+// };
+
+// // 平均値を計算する関数を定義。引数listで受け取れるようにしてる
+// const calcAve = (list) => {
+//   // 合計値の関数を呼び出している（他の関数呼び出しOK)
+//   let sum = calcArraySum(list);
+//   let length = list.length;
+//   // 結果を返却。（returnの次の値は文字でも式でもなんでも大丈夫。）
+//   return sum / length;
+//   // 丁寧にやるのであれば
+//   // let ave =sum/length
+//   // return ave   　　　　　　　　でもよい
+// };
+
+// let list1 = [1, 2, 3, 4, 5, 6, 7];
+// let list2 = [8, 9, 10, 11];
+// let list3 = [12, 13, 14, 15];
+
+// let sum1 = calcArraySum(list1);
+// let sum2 = calcArraySum(list2);
+// let sum3 = calcArraySum(list3);
+
+// let ave1 = calcAve(list1);
+// let ave2 = calcAve(list2);
+// let ave3 = calcAve(list3);
+
+// console.log(`合計値は：${sum1} 平均値は：${ave1}`);
+// console.log(`合計値は：${sum2} 平均値は：${ave2}`);
+// console.log(`合計値は：${sum3} 平均値は：${ave3}`);
+
+//-----練習-----------------------------
+// const nameList = (names) => {
+//   return `私は${names}ですよ！！`;
+// };
+
+// let callName1 = nameList(`今井`);
+// let callName2 = nameList(`深田`);
+// let callName3 = nameList(`ベンジャミン`);
+
+// console.log(callName2);
+//-----練習-----------------------------
