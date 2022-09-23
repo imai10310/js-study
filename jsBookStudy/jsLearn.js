@@ -252,7 +252,7 @@
 // console.log(`合計値は：${sum2} 平均値は：${ave2}`);
 // console.log(`合計値は：${sum3} 平均値は：${ave3}`);
 
-//-----練習-----------------------------
+// -----練習-----------------------------
 // const nameList = (names) => {
 //   return `私は${names}ですよ！！`;
 // };
@@ -263,3 +263,63 @@
 
 // console.log(callName2);
 //-----練習-----------------------------
+// const sumNum = (num) => {
+//   let sum = 0;
+//   for (let calc of num) {
+//     sum += calc;
+//   }
+//   return sum;
+// };
+
+// let num1 = [3, 6, 7, 8, 9];
+// let num2 = [1, 2, 3, 4, 5];
+
+// let sum1 = sumNum(num1);
+// let sum2 = sumNum(num2);
+
+// console.log(`合計値：${sum1}ですよ！`);
+// console.log(`合計値：${sum2}ですよ！`);
+
+// ========8-2-2====================================
+// 引数のデフォルト値を関数で設定しておく。（任意）
+// const concatenate = (lastName = '', firstName = '', space = '') => {
+//   return lastName + space + firstName;
+// };
+
+// let lName = '今井';
+// let fName = '真子';
+// let name1 = concatenate(lName, fName, ' ');
+// console.log(name1);
+// let name2 = concatenate(lName, fName);
+// console.log(`第３引数の渡し忘れ:${name2}`);
+// let name3 = concatenate(lName);
+// console.log(`第2,3引数の渡し忘れ:${name3}`);
+// let name4 = concatenate();
+// console.log(`第1,2,3引数の渡し忘れ:${name4}`);
+// // デフォルト値がある状態でundefinedを渡すと、デフォルト値になる。
+// let name5 = concatenate(undefined, 'マイケル');
+// console.log(`引数にundefined:${name5}`);
+
+// ============================================
+// ●可変長引数
+// この関数は、引数で渡された名前を「・」で結合させた文字列を生成する処理を行う
+// ...nameとすることで、渡された引数をすべて表示させることができる。
+const concatenate = (...name) => {
+  // スコープの都合上、concatenatedNameの文字列を格納する変数を作っておく
+  let concatenatedName = '';
+  for (let i = 0; i < name.length; i++) {
+    concatenatedName += name[i];
+
+    if (i != name.length - 1) {
+      concatenatedName += '・';
+    }
+  }
+  return concatenatedName;
+};
+
+let lName = '今井';
+let fName = '真子';
+let name1 = concatenate(lName, fName);
+console.log(`結合結果：${name1}`);
+
+// -----------------------------------------
