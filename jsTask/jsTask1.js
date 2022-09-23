@@ -20,37 +20,37 @@
 
 //========================================================================
 // ●●●isMatchで判断●●●
-// let saveNum = Math.floor(Math.random() * (100 - 1)) + 100;
-// let isMatch = false; //マッチしたかどうか 一回も〜だったらのときは必ず必要 ex)１回でもログイン済みだったら〜。。。
-
-// for (let i = 0; i < 1000; i++) {
-//   const randomNum = Math.floor(Math.random() * (100 - 1)) + 100;
-
-//   if (saveNum === randomNum) {
-//     console.log(`同じ数がでた${saveNum}と${randomNum}`);
-//     isMatch = true;
-//     break;
-//   }
-//   saveNum = randomNum;
-// }
-
-// if (isMatch === false) {
-//   console.log('ざまあ');
-// }
-
-//===========================================================================
-
-// ●●resultTextの変数を宣言し、true,falseの場合結果を代入する●●●
 let saveNum = Math.floor(Math.random() * (100 - 1)) + 100;
-let resultText = 'ざまあ';
+let isMatch = false; //マッチしたかどうか 一回も〜だったらのときは必ず必要 ex)１回でもログイン済みだったら〜。。。
 
 for (let i = 0; i < 1000; i++) {
   const randomNum = Math.floor(Math.random() * (100 - 1)) + 100;
 
   if (saveNum === randomNum) {
-    resultText = `同じ数がでた${saveNum}と${randomNum}`;
+    console.log(`同じ数がでた${saveNum}と${randomNum}`);
+    isMatch = true;
     break;
-  }÷
+  }
   saveNum = randomNum;
 }
-console.log(resultText);
+
+if (isMatch === false) {
+  console.log('ざまあ');
+}
+
+//===========================================================================
+
+// ●●resultTextの変数を宣言し、true,falseの場合結果を代入する●●●
+// let saveNum = Math.floor(Math.random() * (100 - 1)) + 100;
+// let resultText = 'ざまあ';
+
+// for (let i = 0; i < 1000; i++) {
+//   const randomNum = Math.floor(Math.random() * (100 - 1)) + 100;
+
+//   if (saveNum === randomNum) {
+//     resultText = `同じ数がでた${saveNum}と${randomNum}`;
+//     break;
+//   }
+//   saveNum = randomNum;
+// }
+// console.log(resultText);

@@ -256,3 +256,54 @@
 
 // console.log(score);
 // ---------------------------------------------------
+// 関数で、1-100までの乱数を120回まわし、ランダムで出た整数を返却し、表示させる
+// const random = () => {
+//   for (let i = 0; i < 120; i++) {
+//     const randomNum = Math.floor(Math.random() * 100);
+//     return randomNum;
+//   }
+// };
+
+// let showNum = random();
+// console.log(showNum);
+// --------------------------------------------------------
+// テキスト8-1　例題を関数化してみる！
+
+// const sumNum = (list) => {
+//   let sum = 0;
+//   for (let num of list) {
+//     sum += num;
+//   }
+//   console.log(sum);
+// };
+
+// let list1 = [1, 2, 3, 4, 45, 6, 7];
+// let list2 = [1, 2, 3, 4, 45, 6, 101];
+// let list3 = [1, 2, 3, 4, 45, 6, 202];
+
+// sumNum(list1);
+// sumNum(list2);
+// sumNum(list3);
+
+// ------------------------------------------------
+// 上記を戻り値で結果を返してから表示させてみて！
+
+// const sumNum = (list) => {
+//   let sum = 0;
+//   for (let num of list) {
+//     sum += num;
+//   }
+//   return sum;
+// };
+
+// let list1 = [1, 2, 3, 4, 45, 6, 7];
+// let list2 = [1, 2, 3, 4, 45, 6, 101];
+// let list3 = [1, 2, 3, 4, 45, 6, 202];
+
+// let callSumNum1 = sumNum(list1);
+// let callSumNum2 = sumNum(list2);
+// let callSumNum3 = sumNum(list3);
+
+// console.log(callSumNum1);
+// console.log(callSumNum2);
+// console.log(callSumNum3);
