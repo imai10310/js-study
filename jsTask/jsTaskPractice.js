@@ -176,12 +176,20 @@
 // 「戻り値の確認です」（戻り値）という文字列を戻す
 // 「関数から戻された値を表示します」
 // 「戻り値の確認です」を表示
+// わからんくて答え見ちゃった
 
 // const showStr = () => {
 //   console.log('関数から戻された値を表示します');
-//   return collectStr;
+//   return '戻り値の確認です。';
 // };
-// let collectStr = showStr('戻り値の確認です');
-// console.log(collectStr);
+// let callStr = showStr();
+// console.log(callStr);
+// -------------------------------------
+// 課題　（関数）no.006
+const process = () => {
+  console.log('関数の中に来ました');
+};
 
-// -----戻り値の練習------------
+for (let i = 0; i < 3; i++) {
+  concatenateLoop = process();
+}
