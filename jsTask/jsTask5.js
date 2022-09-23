@@ -12,26 +12,26 @@
 // --------------------------------------
 // // 上記を２重コールバックで。
 // 1行で完結するものは、このようにreturn不要
-const showStr = () => 'hello world';
+// const showStr = () => 'hello world';
 
-const callStr = (_showStr) => {
-  return _showStr();
-};
+// const callStr = (_showStr) => {
+//   return _showStr();
+// };
 
-const callStr2 = (_showStr, _callStr) => {
-  return _callStr(_showStr);
-};
-const callStr3 = (_showStr, _callStr, _callStr2) => {
-  return _callStr2(_showStr, _callStr);
-};
-const callStr4 = (_showStr, _callStr, _callStr2, _callStr3) => {
-  return _callStr3(_showStr, _callStr, _callStr2);
-};
-const callStr5 = (_showStr, _callStr, _callStr2, _callStr3, _callStr4) => {
-  return _callStr4(_showStr, _callStr, _callStr2, _callStr3);
-};
-const str = callStr5(showStr, callStr, callStr2, callStr3, callStr4);
-console.log(str);
+// const callStr2 = (_showStr, _callStr) => {
+//   return _callStr(_showStr);
+// };
+// const callStr3 = (_showStr, _callStr, _callStr2) => {
+//   return _callStr2(_showStr, _callStr);
+// };
+// const callStr4 = (_showStr, _callStr, _callStr2, _callStr3) => {
+//   return _callStr3(_showStr, _callStr, _callStr2);
+// };
+// const callStr5 = (_showStr, _callStr, _callStr2, _callStr3, _callStr4) => {
+//   return _callStr4(_showStr, _callStr, _callStr2, _callStr3);
+// };
+// const str = callStr5(showStr, callStr, callStr2, callStr3, callStr4);
+// console.log(str);
 
 // --------------------------------------
 // callStr3で上記を３中コールバックで。
@@ -78,3 +78,9 @@ console.log(str);
 
 // let str = callStr3(showStr, callStr, callStr2, callStr3);
 // console.log(str);
+
+// --------------------------
+// 無名関数
+(() => {
+  console.log();
+})();
