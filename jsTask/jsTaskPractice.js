@@ -149,6 +149,7 @@
 // }
 
 // --------------------------------------------------
+// https://study-js.manabupanda.net/kadai-list/function/
 // 課題　（関数）no.001
 // コンソールに「関数が呼び出されました」を表示する
 
@@ -186,10 +187,72 @@
 // console.log(callStr);
 // -------------------------------------
 // 課題　（関数）no.006
-const process = () => {
-  console.log('関数の中に来ました');
-};
+// const process = () => {
+//   console.log('関数の中に来ました');
+// };
 
-for (let i = 0; i < 3; i++) {
-  concatenateLoop = process();
-}
+// for (let i = 0; i < 3; i++) {
+//   functionLoop = process();
+// }
+// ------------------------------------
+// 課題　（関数）no.007
+// const showItem = (times) => {
+//   console.log(times);
+// };
+
+// for (let i = 1; i < 10; i++) {
+//   functionLoop = showItem(`${i}回目`);
+// }
+// --------------------------------------
+// 関数の基本問題
+// 数式を関数化させ、ターミナルへ結果表示させる。
+
+// const calc = (num1, num2, num3) => {
+//   console.log(num1 + num2 * num3);
+// };
+
+// calc(1, 10, 100);
+// calc(2, 44, 159);
+
+// ------上記を、値を呼び出し元に一旦返してから表示させる方法で----------
+
+// const calc = (num1, num2, num3) => {
+//   return num1 + num2 * num3;
+// };
+
+// let calcNum1 = calc(1, 10, 100);
+// let calcNum2 = calc(2, 44, 159);
+
+// console.log(calcNum1);
+// console.log(calcNum2);
+
+// ---------------------------------------------------
+// x,yを比べて数字が大きい方を表示させる
+
+// const compareNum = (x, y) => {
+//   if (x < y) {
+//     return `定春くんの勝ち！点数：${y}点`;
+//   }
+//   return `ちゃちゃ丸くんの勝ち！点数：${x}点`;
+// };
+
+// let score = compareNum(10, 7);
+// console.log(score);
+
+// ---------------------------------------------------
+// 上記問題のアレンジ
+
+// const compareNum = (petName1, petName2, x, y) => {
+//   if (x < y) {
+//     return `${petName1}の勝ち！点数：${y}点`;
+//   }
+//   return `${petName2}の勝ち！点数：${x}点`;
+// };
+
+// const studentName1 = 'ささみ';
+// const studentName2 = 'まぐろ';
+
+// let score = compareNum(studentName1, studentName2, 6, 9);
+
+// console.log(score);
+// ---------------------------------------------------

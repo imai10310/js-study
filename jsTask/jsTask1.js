@@ -41,16 +41,16 @@
 //===========================================================================
 
 // ●●resultTextの変数を宣言し、true,falseの場合結果を代入する●●●
-// let saveNum = Math.floor(Math.random() * (100 - 1)) + 100;
-// let resultText = 'ざまあ';
+let saveNum = Math.floor(Math.random() * (100 - 1)) + 100;
+let resultText = 'ざまあ';
 
-// for (let i = 0; i < 1000; i++) {
-//   const randomNum = Math.floor(Math.random() * (100 - 1)) + 100;
+for (let i = 0; i < 1000; i++) {
+  const randomNum = Math.floor(Math.random() * (100 - 1)) + 100;
 
-//   if (saveNum === randomNum) {
-//     resultText = `同じ数がでた${saveNum}と${randomNum}`;
-//     break;
-//   }
-//   saveNum = randomNum;
-// }
-// console.log(resultText);
+  if (saveNum === randomNum) {
+    resultText = `同じ数がでた${saveNum}と${randomNum}`;
+    break;
+  }÷
+  saveNum = randomNum;
+}
+console.log(resultText);
