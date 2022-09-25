@@ -309,6 +309,22 @@
 // console.log(callSumNum3);
 
 // -----------------------------------
+// forEachの練習
+// 配列の要素を全部足して、合計値を出す
+// const list = [1, 2, 3, 4, 5, 6];
+// const list2 = [1, 2, 3, 4, 5, 6];
+
+// let sum = 0;
+// list.forEach((num, [i]) => {
+//   sum += num;
+// });
+// console.log(sum);
+
+// for (let i = 0; i < list.length; ++i) {
+//   console.log(list[i]);
+//   console.log(list2[i]);
+// }
+// -----------------------------------
 // 無名関数
 // (() => {
 //   console.log();
@@ -317,10 +333,10 @@
 // -----------------------------
 //コールバック関数×forEach　リスト8-11
 
-// // currentValue:現在処理してる値
-// // index:配列のインデックス（0からスタート）
-// // array:配列そのもの
-// // 上記３つのを引数として受け取って処理する関数
+// currentValue:現在処理してる値
+// index:配列のインデックス（0からスタート）
+// array:配列そのもの
+// 上記３つのを引数として受け取って処理する関数
 // const showNum = (currentValue, index, array) => {
 //   // ログに結果を表示
 //   console.log(`${index + 1}個目の値：${currentValue}`);
@@ -331,7 +347,9 @@
 // // 配列の各要素にshowNumの関数を処理させようとしている
 // // showNum関数を引数として渡している
 // list.forEach(showNum);
+
 // -----------------------------
+
 // 無名関数
 
 // const callGreeting = (func) => {
@@ -344,20 +362,20 @@
 // });
 
 // ---------------------------------------
-// 配列で要素５こ（あいうえお）を回してログで表示s
+// 配列で要素５こ（あいうえお）を回してログで表示
 
 // let list = ['あ', 'い', 'う', 'え', 'お'];
 // list.forEach((currentValue) => {
 //   console.log(currentValue);
 // });
 
-// ______-----------------------____________------------
+// ---------------------------------------
 
 // const names = ['深田', '今井', '佐藤'];
 // for (let i = 0; i < names.length; i++) {
 //   console.log(`出席番号${i} : 私の名前は ${names} です`);
 // }
-
+// ---------------------------------------
 // // 上記をforEachに変換しなさい。
 
 // const names = ['深田', '今井', '佐藤'];
@@ -365,11 +383,53 @@
 //   console.log(`出席番号${index + 1} : 私の名前は ${name} です`);
 // });
 
+// ---------------------------------------
 // コールバックで、引数を渡す練習
-const hoge = (func) => {
-  func('test');
+// const hoge = (func) => {
+//   func('test');
+// };
+
+// hoge((str) => {
+//   console.log(str);
+// });
+// ----------------------------------
+//
+const callFunc = (f) => {
+  f('Hello World');
 };
 
+const list = [callFunc, callFunc, callFunc, callFunc];
+
+// foreachでcallFuncを回して、helloworldをうけとり、ログを表示
+// 表示方法；「（）回目：(hello world)」
+
+list.forEach((func, index) => {
+  func((str) => {
+    console.log(`${index + 1}回目：${str}`);
+  }); //これだけでよい？
+});
+
+//
+// -------------------------------------------------
+// const hoge = (test) => {
+//   test();
+// };
+
+// hoge('テスト');
+// hoge(() => {});
+// const fuga = () => {};
+
+// ---------------------------------------------
+//
+const hoge = (f) => {
+  f('hello world');
+};
+const piyo = (str) => {
+  console.log(str);
+};
+
+hoge(piyo);
+// =
 hoge((str) => {
   console.log(str);
 });
