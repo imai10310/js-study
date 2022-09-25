@@ -346,7 +346,30 @@
 // ---------------------------------------
 // 配列で要素５こ（あいうえお）を回してログで表示s
 
-let list = ['あ', 'い', 'う', 'え', 'お'];
-list.forEach((currentValue) => {
-  console.log(currentValue);
+// let list = ['あ', 'い', 'う', 'え', 'お'];
+// list.forEach((currentValue) => {
+//   console.log(currentValue);
+// });
+
+// ______-----------------------____________------------
+
+// const names = ['深田', '今井', '佐藤'];
+// for (let i = 0; i < names.length; i++) {
+//   console.log(`出席番号${i} : 私の名前は ${names} です`);
+// }
+
+// // 上記をforEachに変換しなさい。
+
+// const names = ['深田', '今井', '佐藤'];
+// names.forEach((name, index) => {
+//   console.log(`出席番号${index + 1} : 私の名前は ${name} です`);
+// });
+
+// コールバックで、引数を渡す練習
+const hoge = (func) => {
+  func('test');
+};
+
+hoge((str) => {
+  console.log(str);
 });
