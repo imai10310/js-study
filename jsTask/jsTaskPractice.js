@@ -309,3 +309,44 @@
 // console.log(callSumNum3);
 
 // -----------------------------------
+// 無名関数
+// (() => {
+//   console.log();
+// })();
+
+// -----------------------------
+//コールバック関数×forEach　リスト8-11
+
+// // currentValue:現在処理してる値
+// // index:配列のインデックス（0からスタート）
+// // array:配列そのもの
+// // 上記３つのを引数として受け取って処理する関数
+// const showNum = (currentValue, index, array) => {
+//   // ログに結果を表示
+//   console.log(`${index + 1}個目の値：${currentValue}`);
+// };
+// // listという変数に格納された配列
+// let list = [1, 2, 3, 4, 5, 6];
+// // (配列の変数名).forEach:自動でループしながら配列内の要素に処理を与えられる
+// // 配列の各要素にshowNumの関数を処理させようとしている
+// // showNum関数を引数として渡している
+// list.forEach(showNum);
+// -----------------------------
+// 無名関数
+
+// const callGreeting = (func) => {
+//   func();
+// };
+
+// // callGreeting(sayGreeting);
+// callGreeting(() => {
+//   console.log('おはようございます！');
+// });
+
+// ---------------------------------------
+// 配列で要素５こ（あいうえお）を回してログで表示s
+
+let list = ['あ', 'い', 'う', 'え', 'お'];
+list.forEach((currentValue) => {
+  console.log(currentValue);
+});
