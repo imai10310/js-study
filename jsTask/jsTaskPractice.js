@@ -394,22 +394,22 @@
 // });
 // ----------------------------------
 //
-const callFunc = (f) => {
-  f('Hello World');
-};
+// const callFunc = (f) => {
+//   f('Hello World');
+// };
 
-const list = [callFunc, callFunc, callFunc, callFunc];
+// const list = [callFunc, callFunc, callFunc, callFunc];
 
-// foreachでcallFuncを回して、helloworldをうけとり、ログを表示
-// 表示方法；「（）回目：(hello world)」
+// // foreachでcallFuncを回して、helloworldをうけとり、ログを表示
+// // 表示方法；「（）回目：(hello world)」
 
-list.forEach((func, index) => {
-  func((str) => {
-    console.log(`${index + 1}回目：${str}`);
-  }); //これだけでよい？
-});
+// list.forEach((func, index) => {
+//   func((str) => {
+//     console.log(`${index + 1}回目：${str}`);
+//   });
+// });
 
-//
+// -------------------------------------------------
 // -------------------------------------------------
 // const hoge = (test) => {
 //   test();
@@ -421,15 +421,99 @@ list.forEach((func, index) => {
 
 // ---------------------------------------------
 //
-const hoge = (f) => {
-  f('hello world');
-};
-const piyo = (str) => {
-  console.log(str);
+// const hoge = (f) => {
+//   f('hello world');
+// };
+// const piyo = (str) => {
+//   console.log(str);
+// };
+
+// hoge(piyo);
+// // =
+// hoge((str) => {
+//   console.log(str);
+// });
+// -------------------------------------------
+// progate
+// const charactars = [
+//   { fName: '真子', country: '日本' },
+//   { fName: 'マイケル', country: 'アメリカ' },
+//   { fName: 'クララ', country: 'フランス' },
+// ];
+
+// for (let i = 0; i < charactars.length; i++) {
+//   console.log(
+//     `名前は${charactars[i].fName}です。出身は${charactars[i].country}だよ！`,
+//   );
+// }
+
+// -----------一度オブジェクトを変数に代入してからログに表示させる場合--------------------------------
+// const charactars = [
+//   { fName: '真子', country: '日本' },
+//   { fName: 'マイケル', country: 'アメリカ' },
+//   { fName: 'クララ', country: 'フランス' },
+// ];
+
+// for (let i = 0; i < charactars.length; i++) {
+//   // 一度オブジェクトを変数に代入
+//   let charactar = charactars[i];
+//   // 代入した変数で変数へ代入
+//   console.log(`名前は${charactar.fName}です。出身は${charactar.country}だよ！`);
+// }
+
+// -------------------------------------------
+// クラス、オブジェクトを作成し、オブジェクト内のプロパティへアクセスしてログを表示させている
+
+// クラスを作成
+class AtHome {
+  constructor() {
+    this.name = '';
+    this.job = '';
+    this.area = '';
+    this.jobNumber = 0;
+    this.score1 = 0;
+    this.score2 = 0;
+    this.score3 = 0;
+  }
+}
+//　employeeを引数として受けとり、ログで結果を表示させている
+const EmployeeAccount = (employee) => {
+  let sum = employee.score1 + employee.score2 + employee.score3;
+  console.log(`社員名：${employee.name}`);
+  console.log(`職種：${employee.job}`);
+  console.log(`社員番号：${employee.jobNumber}`);
+  console.log(`評価点：${sum}`);
+  console.log('---------------------------------------');
 };
 
-hoge(piyo);
-// =
-hoge((str) => {
-  console.log(str);
-});
+//クラスを元にオブジェクトを作成し、makoという変数に代入している。
+let mako = new AtHome();
+mako.name = '今井 真子';
+mako.job = 'ITアソシエイト';
+mako.area = '豊島区・板橋区・北区・文京区';
+mako.jobNumber = 21016;
+mako.score1 = 6;
+mako.score2 = 7;
+mako.score3 = 8;
+// EmployrrAccountの関数を呼び出し、変数makoを引数として渡している。
+EmployeeAccount(mako);
+
+let masaru = new AtHome();
+masaru.name = '田村 優';
+masaru.job = '営業第一チーム';
+masaru.area = '北区';
+masaru.jobNumber = 21017;
+masaru.score1 = 10;
+masaru.score2 = 10;
+masaru.score3 = 10;
+EmployeeAccount(masaru);
+
+let hiromu = new AtHome();
+hiromu.name = '`田中　大夢';
+hiromu.job = '営業第２チーム';
+hiromu.area = '杉並区';
+hiromu.jobNumber = 21018;
+hiromu.score1 = 100;
+hiromu.score2 = 100;
+hiromu.score3 = 8100;
+EmployeeAccount(hiromu);
