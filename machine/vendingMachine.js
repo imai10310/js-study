@@ -19,4 +19,5 @@ class VendingMachine {
     return this.drinkName;
   }
   あ;
+  aa;
 }
