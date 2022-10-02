@@ -463,57 +463,287 @@
 
 // -------------------------------------------
 // クラス、オブジェクトを作成し、オブジェクト内のプロパティへアクセスしてログを表示させている
+// 9-2
+// クラスを作成;
+// class AtHome {
+//   constructor() {
+//     this.name = '';
+//     this.job = '';
+//     this.area = '';
+//     this.jobNumber = 0;
+//     this.score1 = 0;
+//     this.score2 = 0;
+//     this.score3 = 0;
+//   }
+// }
+// //　employeeを引数として受けとり、核
+// const EmployeeAccount = (employee) => {
+//   let sum = employee.score1 + employee.score2 + employee.score3;
+//   console.log(`社員名：${employee.name}`);
+//   console.log(`職種：${employee.job}`);
+//   console.log(`社員番号：${employee.jobNumber}`);
+//   console.log(`評価点：${sum}`);
+//   console.log('ーーーーーーーーーーーーーーーーーーーー');
+// };
 
-// クラスを作成
-class AtHome {
+// let mako = new AtHome();
+// mako.name = '今井 真子';
+// mako.job = 'ITアソシエイト';
+// mako.area = '豊島区・板橋区・北区・文京区';
+// mako.jobNumber = 21016;
+// mako.score1 = 6;
+// mako.score2 = 7;
+// mako.score3 = 8;
+// EmployeeAccount(mako);
+
+// let masaru = new AtHome();
+// masaru.name = '田村 優';
+// masaru.job = '営業第一チーム';
+// masaru.area = '北区';
+// masaru.jobNumber = 21017;
+// masaru.score1 = 10;
+// masaru.score2 = 10;
+// masaru.score3 = 10;
+// EmployeeAccount(masaru);
+
+// let hiromu = new AtHome();
+// hiromu.name = '`田中　大夢';
+// hiromu.job = '営業第２チーム';
+// hiromu.area = '杉並区';
+// hiromu.jobNumber = 21018;
+// hiromu.score1 = 100;
+// hiromu.score2 = 100;
+// hiromu.score3 = 8100;
+// EmployeeAccount(hiromu);
+
+// ---------------------------------------------
+
+// クラスは、データ処理をと一緒に含めることが可能
+// 9-4
+// class AtHome {
+//   constructor() {
+//     this.name = '';
+//     this.job = '';
+//     this.area = '';
+//     this.jobNumber = 0;
+//     this.score1 = 0;
+//     this.score2 = 0;
+//     this.score3 = 0;
+//   }
+//   // クラスの中に処理を含める場合、関数名のみでよい（constいらない）
+//   // この状態になった関数をメソッドと呼ぶ　プロパティとメソッドを合わせてメンバと呼ぶ
+//   // だが、関数と同じように扱える。
+//   // クラス内部のデータを使用できるため、引数は不要となる。
+//   EmployeeAccount = () => {
+//     // オブジェクトないのメンバにアクセスするにはthis
+//     let sum = this.score1 + this.score2 + this.score3;
+//     console.log(`社員名：${this.name}`);
+//     console.log(`職種：${this.job}`);
+//     console.log(`社員番号：${this.jobNumber}`);
+//     console.log(`評価点：${sum}`);
+//     console.log('--------------------------------------');
+//   };
+// }
+
+// let mako = new AtHome();
+// mako.name = '今井 真子';
+// mako.job = 'ITアソシエイト';
+// mako.area = '豊島区・板橋区・北区・文京区';
+// mako.jobNumber = 21016;
+// mako.score1 = 6;
+// mako.score2 = 7;
+// mako.score3 = 8;
+// mako.EmployeeAccount();
+
+// let masaru = new AtHome();
+// masaru.name = '田村 優';
+// masaru.job = '営業第一チーム';
+// masaru.area = '北区';
+// masaru.jobNumber = 21017;
+// masaru.score1 = 10;
+// masaru.score2 = 10;
+// masaru.score3 = 10;
+// masaru.EmployeeAccount();
+
+// let hiromu = new AtHome();
+// hiromu.name = '`田中　大夢';
+// hiromu.job = '営業第２チーム';
+// hiromu.area = '杉並区';
+// hiromu.jobNumber = 21018;
+// hiromu.score1 = 100;
+// hiromu.score2 = 100;
+// hiromu.score3 = 8100;
+// hiromu.EmployeeAccount();
+// ------------------------------------------------
+
+9 - 5;
+// class AtHome {
+//   constructor() {
+//     this.name = '';
+//     this.job = '';
+//     this.area = '';
+//     this.jobNumber = 0;
+//     this.score1 = 0;
+//     this.score2 = 0;
+//     this.score3 = 0;
+//   }
+
+//   EmployeeAccount = () => {
+//     let sum = this.score1 + this.score2 + this.score3;
+//     console.log(`社員名：${this.name}`);
+//     console.log(`職種：${this.job}`);
+//     console.log(`社員番号：${this.jobNumber}`);
+//     console.log(`評価点：${sum}`);
+//     console.log('--------------------------------------');
+//   };
+//   // SetDateをいれることで、実行部分のコードが簡素化される。
+//   // 必要なデータをまとめてプロパティに登録するメソッド
+//   SetDate(
+//     name = '',
+//     job = '',
+//     area = '',
+//     jobNumber = 0,
+//     score1 = 0,
+//     score2 = 0,
+//     score3 = 0,
+//   ) {
+//     this.name = name;
+//     this.job = job;
+//     this.area = area;
+//     this.jobNumber = jobNumber;
+//     this.score1 = score1;
+//     this.score2 = score2;
+//     this.score3 = score3;
+//   }
+// }
+
+// let mako = new AtHome();
+// mako.SetDate(
+//   '今井真子',
+//   'ITアソシエイト',
+//   '豊島区・板橋区・北区・文京区',
+//   '21016',
+//   2,
+//   4,
+//   5,
+// );
+// mako.EmployeeAccount();
+
+// // --------------------------------------------
+// // 9-6
+// class AtHome {
+//   constructor() {
+//     this.name = '';
+//     this.job = '';
+//     this.area = '';
+//     this.jobNumber = 0;
+//     this.score1 = 0;
+//     this.score2 = 0;
+//     this.score3 = 0;
+//   }
+//   SetDate(
+//     name = '',
+//     job = '',
+//     area = '',
+//     jobNumber = 0,
+//     score1 = 0,
+//     score2 = 0,
+//     score3 = 0,
+//   ) {
+//     this.name = name;
+//     this.job = job;
+//     this.area = area;
+//     this.jobNumber = jobNumber;
+//     this.score1 = score1;
+//     this.score2 = score2;
+//     this.score3 = score3;
+//   }
+// // ３人の３つのスコアの合計値をだしている。
+//   calcScore = () => {
+//     let sum = this.score1 + this.score2 + this.score3();
+//     let ave = sum / 3;
+//     return ave;
+//   };
+
+//   // 平均値を計算するメソッド
+//   calcAve=()=>{
+
+//   }
+
+// ーーーーーーーーーーーーーーーーー
+// ーーーーーーーーーーーーーーーーー
+// ーーーーーーーーーーーーーーーーー
+// ーーーーーーーーーーーーーーーーー
+// ーーーーーーーーーーーーーーーーー
+// ーーーーーーーーーーーーーーーーー
+// ーーーーーーーーーーーーーーーーー
+// ーーーーーーーーーーーーーーーーー
+// ーーーーーーーーーーーーーーーーー
+// ーーーーーーーーーーーーーーーーー
+// ーーーーーーーーーーーーーーーーー
+// ーーーーーーーーーーーーーーーーー
+
+// }
+
+class TestScore {
   constructor() {
     this.name = '';
-    this.job = '';
-    this.area = '';
-    this.jobNumber = 0;
-    this.score1 = 0;
-    this.score2 = 0;
-    this.score3 = 0;
+    this.english = 0;
+    this.math = 0;
+    this.japanese = 0;
+  }
+
+  //プロパティにまとめてデータをセットするメソッド。
+  setData(name = '', english = 0, math = 0, japanese = 0) {
+    this.name = name;
+    this.english = english;
+    this.math = math;
+    this.japanese = japanese;
+  }
+
+  //合計値を計算するメソッド。
+  calcSum() {
+    let sum = this.english + this.math + this.japanese;
+    return sum;
+  }
+
+  //平均値を計算するメソッド。
+  calcAve() {
+    let sum = this.calcSum();
+    let ave = sum / 3;
+    return ave;
+  }
+
+  //合計値と平均値を表示するメソッド。
+  printScore() {
+    let sum = this.calcSum();
+    let ave = this.calcAve();
+    console.log(this.name + 'さんの合計: ' + sum + ' 平均: ' + ave);
   }
 }
-//　employeeを引数として受けとり、ログで結果を表示させている
-const EmployeeAccount = (employee) => {
-  let sum = employee.score1 + employee.score2 + employee.score3;
-  console.log(`社員名：${employee.name}`);
-  console.log(`職種：${employee.job}`);
-  console.log(`社員番号：${employee.jobNumber}`);
-  console.log(`評価点：${sum}`);
-  console.log('---------------------------------------');
-};
 
-//クラスを元にオブジェクトを作成し、makoという変数に代入している。
-let mako = new AtHome();
-mako.name = '今井 真子';
-mako.job = 'ITアソシエイト';
-mako.area = '豊島区・板橋区・北区・文京区';
-mako.jobNumber = 21016;
-mako.score1 = 6;
-mako.score2 = 7;
-mako.score3 = 8;
-// EmployrrAccountの関数を呼び出し、変数makoを引数として渡している。
-EmployeeAccount(mako);
+//たろうさん用のTestScoreAdvを使って、データ表示。
+let taro = new TestScore();
+taro.setData('たろう', 92, 87, 74);
+taro.printScore();
 
-let masaru = new AtHome();
-masaru.name = '田村 優';
-masaru.job = '営業第一チーム';
-masaru.area = '北区';
-masaru.jobNumber = 21017;
-masaru.score1 = 10;
-masaru.score2 = 10;
-masaru.score3 = 10;
-EmployeeAccount(masaru);
+//はなこさん用のTestScoreAdvを使って、データ表示。
+let hanako = new TestScore();
+hanako.setData('はなこ', 79, 95, 83);
+hanako.printScore();
 
-let hiromu = new AtHome();
-hiromu.name = '`田中　大夢';
-hiromu.job = '営業第２チーム';
-hiromu.area = '杉並区';
-hiromu.jobNumber = 21018;
-hiromu.score1 = 100;
-hiromu.score2 = 100;
-hiromu.score3 = 8100;
-EmployeeAccount(hiromu);
+//たろうさんの合計点を取得。
+let taroSum = taro.calcSum();
+//はなこさんの合計点を取得。
+let hanakoSum = hanako.calcSum();
+//二人の合計の平均点を算出し、表示。
+let ave2 = (taroSum + hanakoSum) / 2;
+console.log('二人の合計の平均: ' + ave2);
+
+//たろうさんの平均点を取得。
+let taroAve = taro.calcAve();
+//はなこさんの平均点を取得。
+let hanakoAve = hanako.calcAve();
+//二人の平均の平均点を算出し、表示。
+let aveAve = (taroAve + hanakoAve) / 2;
+console.log('二人の平均の平均: ' + aveAve);
