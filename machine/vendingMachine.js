@@ -13,10 +13,9 @@ class VendingMachine {
     }
     return true;
   }
-  // 飲み物を買う
-  buyDrink(drinkName, price) {
+  // 飲み物を売る
+  sellDrink(drinkName, price) {
     if (this.checkPrice() === false) return;
+    return this.drinkName;
   }
-  ああ;
-  あ;
 }
