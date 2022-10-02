@@ -18,4 +18,5 @@ class VendingMachine {
     if (this.checkPrice() === false) return;
     return this.drinkName;
   }
+  あ;
 }
