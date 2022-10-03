@@ -1,4 +1,4 @@
-export class VendingMachine {
+export default class VendingMachine {
   drinkName;
   price;
   constructor(drinkName, price) {
@@ -15,10 +15,9 @@ export class VendingMachine {
   }
   // 飲み物を売る
   sellDrink(money) {
-    if (this.checkPrice === false) return;
-    if (this.Price <= money) {
+    if (this.price === false) return;
+    if (this.price <= money) {
       return console.log(this.drinkName, 'です！');
     }
-    aa;
   }
 }
