@@ -1,1 +1,4 @@
-const cola = new drink('コカ・コーラ', 150, 220);
+import { VendingMachine } from './vendingMachine';
+const cola = new drink('コカ・コーラ', 150);
+cola.checkPrice(150);
+sellDrink(150);
