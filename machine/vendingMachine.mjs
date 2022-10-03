@@ -15,9 +15,13 @@ export default class VendingMachine {
   }
   // 飲み物を売る
   sellDrink(money) {
-    if (this.checkPrice() === false) return;
-    if (this.price <= money) {
-      return console.log(this.drinkName, 'です！');
+    // お金が入っているか確認して、もし投入したお金が本体価格より少なかったら「不足：●円」と表示。
+    if (this.checkPrice() && this.price > money) {
+      console.log(`不足：${this.price - money}円`);
+    } else if (this.price <= money) {
+      return console.log(
+        `どうぞ、${this.drinkName}です！ お釣りは${money - this.price}円です。`,
+      );
     }
   }
 }
